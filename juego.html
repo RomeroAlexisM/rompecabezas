@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rompecabezas Recargado</title>
+    <link rel="stylesheet" href="css/juego.css">
+    <link rel="stylesheet" type="text/css" href="js/sweetalert/sweetalert.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="js/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <div class="col-40">
+      <div id="titulo">
+        <h2>Rompecabezas</h2>
+      </div>
+      <div id="contenedor">
+        <div id="instrucciones">
+          <h3>Opciones</h3>
+
+          <h4>Cantidad de piezas por lado</h4>
+          <div class="input">
+            <button onclick="Juego.calcularCantidadDeMovimientos()">MEZCLAR</button>
+            <input type="text" id="cantidadPiezasPorLado" value=""></br>
+            <span id="advertencia">Maximo 10 piezas por lado</span>
+          </div>
+
+          <h4>Dificultad</h4>
+          <div class="radio">
+    				<input type="radio" name="dificultad" id="facil"value="facil" checked>
+    				<label for="facil">Fácil</label>
+
+    				<input type="radio" name="dificultad" id="medio"value="medio">
+    				<label for="medio">Medio</label>
+
+    				<input type="radio" name="dificultad" id="dificil"value="dificil">
+    				<label for="dificil">Dificil</label>
+    			</div>
+
+          <h4>Movimientos restantes</h4>
+          <p id="contadorDeMovimientos"><span>---</span></p>
+          <h4>Tiempo</h4>
+          <p>
+            <span id="minutos">00</span>:<span id="segundos">00</span>:<span id="centesima">00</span>
+          </p>
+        </div>
+      </div>
+      <div id="imagenes">
+        <img src="images/paisaje1.jpg" class="imagen" onclick="Juego.cambiarImagen()"></br>
+        <img src="images/paisaje2.jpg" class="imagen" onclick="Juego.cambiarImagen()"></br>
+        <img src="images/paisaje3.jpg" class="imagen" onclick="Juego.cambiarImagen()"></br>
+        <img src="images/paisaje4.jpg" class="imagen" onclick="Juego.cambiarImagen()"></br>
+        <img src="images/paisaje5.jpg" class="imagen" onclick="Juego.cambiarImagen()"></br>
+      </div>
+    </div>
+    <div class="col-60">
+      <div id="juego">
+        <canvas id="canvas" width="600" height="600"></canvas>
+      </div>
+    </div>
+    <div class="fotter">
+      <p>Autor: Alexis Romero</p>
+    </div>
+<script src="js/juego.js"></script>
+<script src="js/pieza.js"></script>
+  </body>
+</html>
